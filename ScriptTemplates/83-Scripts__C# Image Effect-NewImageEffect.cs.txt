@@ -1,0 +1,33 @@
+﻿using UnityEngine;
+
+namespace Game
+{
+    [ExecuteInEditMode, RequireComponent(typeof(Camera))]
+    public class #SCRIPTNAME# : MonoBehaviour
+    {
+        private Material m_Material;
+        public Material material
+        {
+            get
+            {
+                if (m_Material == null)
+                    m_Material = new Material(Shader.Find("???")) { hideFlags = HideFlags.DontSave };
+
+                return m_Material;
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (m_Material != null)
+                DestroyImmediate(m_Material);
+
+            m_Material = null;
+        }
+
+        private void OnRenderImage(RenderTexture source, RenderTexture destination)
+        {
+            Graphics.Blit(source, destination, material, 0);
+        }
+    }
+}

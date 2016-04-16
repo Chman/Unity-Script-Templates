@@ -1,0 +1,18 @@
+﻿using UnityEngine;
+using UnityEditor;
+
+namespace Game.Editors
+{
+    [CustomEditor(typeof(???))]
+    public class #SCRIPTNAME# : Editor
+    {
+        private void OnEnable()
+        {
+        }
+
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+        }
+    }
+}

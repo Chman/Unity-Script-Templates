@@ -1,0 +1,4 @@
+#ifndef __MY_CGINC__
+#define __MY_CGINC__
+
+#endif // __MY_CGINC__
